@@ -87,7 +87,7 @@ class jadwalControl extends Controller
         }
     }
 
-    public function update(Request $r, $id){
+    public function update(Request $r){
 
         if ($this->isValidEdit($r)->fails()) {
             return response()->json([
@@ -103,7 +103,7 @@ class jadwalControl extends Controller
                 'batasUpload' => $r->dateBatasUpEdit,
                 'keterangan' => $r->txtKetJadwalEdit
             ];
-            kelas::query()
+            jadwalModel::query()
                 ->where('idJadwal', '=', $id)
                 ->update($data);
             return response()
@@ -113,5 +113,9 @@ class jadwalControl extends Controller
                     'url' => 'kelas/dataKelas'
                 ]);
         }
+    }
+
+    public function delete(Request $r){
+
     }
 }
