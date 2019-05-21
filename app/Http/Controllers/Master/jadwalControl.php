@@ -20,6 +20,7 @@ class jadwalControl extends Controller
                 ->select('idJadwal','idLelang','jadwal','batasUpload','keterangan')
                 ->orderBy('idJadwal', 'ASC')
                 ->get();
+
         return Datatables::of($jadwal)
             ->addIndexColumn()
             ->addColumn( 'action', function ($jadwal) {
