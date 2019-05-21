@@ -23,7 +23,7 @@ class jadwalControl extends Controller
         return Datatables::of($tahapan)
             ->addIndexColumn()
             ->addColumn( 'action', function ($tahapan) {
-                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $tahapan->idTahapan . '\',\'' . $jadwal->idLelang . '\',\'' . $jadwal->batasUpload . '\')"><i class="fa fa-edit"></i><a/>
+                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $tahapan->idTahapan . '\',\'' . $tahapan->idLelang . '\',\'' . $tahapan->batasUpload . '\')"><i class="fa fa-edit"></i><a/>
                         <a class="btn-sm btn-danger" id="btn-delete" href="#" onclick="deleteTahapan(\''. $tahapan->idTahapan.'\')" ><i class="fa fa-trash"></i></a>';
                 })
             ->make(true);
