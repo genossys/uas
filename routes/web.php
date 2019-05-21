@@ -26,6 +26,13 @@ Route::get('/logout','AuthController@logout')->name('logout');
 
 Route::group(['middleware' => 'auth'],function(){
 
+Route::prefix('jadwal')->group(function(){
+    Route::get('/', 'Master\jadwalControl@index')->name('dataJadwal');
+    Route::get('/getDataJadwal','Master\jadwalControl@getDataJadwal');
+    Route::post('/simpanDataJadwal','Master\jadwalControl@insert')->name('simpanJadwal');
+
+});
+
 Route::get('/admin', function () {
     return view('/admin/menuawal');
 })->name('admin');
@@ -37,10 +44,6 @@ Route::get('/admin', function () {
 Route::get('/datalelang', function () {
     return view('/admin/master/datalelang');
 })->name('dataLelang');
-
-Route::get('/datajadwal', function () {
-    return view('/admin/master/datajadwal');
-})->name('dataJadwal');
 
 Route::get('/datatahapan', function () {
     return view('/admin/master/datatahapan');

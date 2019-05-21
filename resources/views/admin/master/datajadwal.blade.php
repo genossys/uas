@@ -24,6 +24,7 @@ Data Jadwal
                 <th>ID Lelang</th>
                 <th>Jadwal Pra-Kualifikasi</th>
                 <th>Batas Upload</th>
+                <th>Keterangan</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -39,7 +40,7 @@ Data Jadwal
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <form action="" method="POST" id="formSimpanJadwal">
+        <form action="{{ route('simpanJadwal')}}" METHOD="POST" id="formSimpanJadwal">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="alert alert-danger" style="display:none"></div>
@@ -61,7 +62,7 @@ Data Jadwal
 
                     </div>
                     
-                    <div class="row">
+                    <div class="row">   
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Jadwal Pra-Kualifikasi</label>
@@ -213,5 +214,5 @@ Data Jadwal
             });
         });
     </script>
-
+    <script src="{{asset ('/js/Master/jadwal.js')}}"></script>
     @endsection

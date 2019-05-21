@@ -1,6 +1,6 @@
 <?php
 
-namespace tugas_uas\Master;
+namespace App\Master;
 
 use Illuminate\Database\Eloquent\Model;
 
