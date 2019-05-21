@@ -30,6 +30,7 @@ Route::prefix('jadwal')->group(function(){
     Route::get('/', 'Master\jadwalControl@index')->name('dataJadwal');
     Route::get('/getDataJadwal','Master\jadwalControl@getDataJadwal');
     Route::post('/simpanDataJadwal','Master\jadwalControl@insert')->name('simpanJadwal');
+    Route::post('/editDataJadwal','Master\jadwalControl@update')->name('editJadwal');
 
 });
 

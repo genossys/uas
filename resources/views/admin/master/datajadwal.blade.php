@@ -121,23 +121,24 @@ Data Jadwal
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Form Edit Data jadwal</h4>
                 </div>
-                <form action="" method="POST" id="formEditJadwal">
+            <form action="{{route('editJadwal')}}" method="POST" id="formEditJadwal">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="alert alert-danger" style="display:none"></div>
                         <div class="alert alert-success" style="display:none"></div>
                         <div class="row">
                             <div class="col-sm-6">
+                                <input type="hidden" class="form-control" placeholder="ID jadwal" id="txtOldIdJadwalEdit" name="txtOldIdJadwalEdit">
                                 <div class="form-group">
                                     <label>ID Jadwal</label>
-                                    <input type="text" class="form-control" placeholder="ID jadwal" id="txtIdJadwal" name="txtIdJadwal">
+                                    <input type="text" class="form-control" placeholder="ID jadwal" id="txtIdJadwalEdit" name="txtIdJadwalEdit">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>ID Lelang</label>
-                                    <input type="text" class="form-control autocomplete" placeholder="ID jadwal" id="txtIdLelang" name="txtIdLelang">
+                                    <input type="text" class="form-control autocomplete" placeholder="ID jadwal" id="txtIdLelangEdit" name="txtIdLelangEdit">
                                 </div>
                             </div>
                         </div>
@@ -152,7 +153,7 @@ Data Jadwal
                                                 <i class="fa fa-calendar"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right datepicker" name="dateJadwalPraQ" id="dateJadwalPraQ">
+                                        <input type="text" class="form-control float-right datepicker" name="dateJadwalPraQEdit" id="dateJadwalPraQEdit">
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +167,7 @@ Data Jadwal
                                                 <i class="fa fa-calendar"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right datepicker" name="dateBatasUp" id="dateBatasUp">
+                                        <input type="text" class="form-control float-right datepicker" name="dateBatasUpEdit" id="dateBatasUpEdit">
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +177,7 @@ Data Jadwal
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Ket. Jadwal</label>
-                                    <textarea class="form-control" rows="3" id="txtKetJadwal" name="txtKetJadwal"></textarea>
+                                    <textarea class="form-control" rows="3" id="txtKetJadwalEdit" name="txtKetJadwalEdit"></textarea>
                                 </div>
                             </div>
                         </div>

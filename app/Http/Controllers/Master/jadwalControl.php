@@ -22,8 +22,8 @@ class jadwalControl extends Controller
                 ->get();
         return Datatables::of($jadwal)
             ->addIndexColumn()
-            ->addColumn( 'action', function ($datakelas) {
-                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" ><i class="fa fa-edit"></i><a/> 
+            ->addColumn( 'action', function ($jadwal) {
+                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $jadwal->idJadwal . '\',\'' . $jadwal->idLelang . '\',\'' . $jadwal->jadwal . '\',\'' . $jadwal->batasUpload . '\',\'' . $jadwal->keterangan . '\')"><i class="fa fa-edit"></i><a/> 
                         <a class="btn-sm btn-danger" id="btn-delete" href="#" ><i class="fa fa-trash"></i></a>';
                 })
             ->make(true);
@@ -39,7 +39,26 @@ class jadwalControl extends Controller
 
         $rules = [
             'txtIdJadwal' => 'required|max:10',
-            'txtIdLelang' => 'required|max:10'
+            'txtIdLelang' => 'required|max:10',
+            'dateJadwalPraQ' => 'required',
+            'dateBatasUp' => 'required',
+        ];
+
+        return Validator::make($r->all(), $rules, $messages);
+    }
+
+    private function isValidEdit(Request $r)
+    {
+        $messages = [
+            'required'  => 'Field :attribute Tidak Boleh Kosong',
+            'max'       => 'Filed :attribute Maksimal :max',
+        ];
+
+        $rules = [
+            'txtIdJadwalEdit' => 'required|max:10',
+            'txtIdLelangEdit' => 'required|max:10',
+            'dateJadwalPraQEdit' => 'required',
+            'dateBatasUpEdit' => 'required',
         ];
 
         return Validator::make($r->all(), $rules, $messages);
@@ -64,6 +83,34 @@ class jadwalControl extends Controller
                 ->json([
                     'valid' => true,
                     'sukses' => $jadwal,
+                ]);
+        }
+    }
+
+    public function update(Request $r, $id){
+
+        if ($this->isValidEdit($r)->fails()) {
+            return response()->json([
+                'valid' => false,
+                'errors' => $this->isValidUpdate($r)->errors()->all()
+            ]);
+        } else {
+            $id = $r->txtOldIdJadwalEdit;
+            $data = [
+                'idJadwal' => $r->txtIdJadwalEdit,
+                'idLelang' => $r->txtIdLelangEdit,
+                'jadwal' => $r->dateJadwalPraQEdit,
+                'batasUpload' => $r->dateBatasUpEdit,
+                'keterangan' => $r->txtKetJadwalEdit
+            ];
+            kelas::query()
+                ->where('idJadwal', '=', $id)
+                ->update($data);
+            return response()
+                ->json([
+                    'valid' => true,
+                    'sukses' => $data,
+                    'url' => 'kelas/dataKelas'
                 ]);
         }
     }

@@ -60,6 +60,45 @@ $('#formSimpanJadwal').on('submit', function (e) {
 
 });
 
+$('#formEditJadwal').on('submit', function (e) {
+    e.preventDefault();
+    var method = $(this).attr("method");
+    var url = $(this).attr("action");
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        type: method,
+        url: url,
+        dataType: 'JSON',
+        data: new FormData($('#formEditJadwal')[0]),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (response) {
+            console.log(response);
+            if (response.valid) {
+                $('#modaleditJadwal').modal('hide');
+                table.draw();
+            } else {
+                alertDanger.hide();
+                alertSukses.hide();
+                $.each(response.errors, function (key, value) {
+                    alertDanger.show().append('<p>' + value + '</p>');
+                });
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            alert(errorThrown + xhr + textStatus);
+        }
+
+    });
+
+});
+
 function clearSave(){
     $('#txtIdLelang').val('');
     $('#txtIdJadwal').val('');
@@ -68,4 +107,14 @@ function clearSave(){
     $('#txtKetJadwal').val('');
     alertDanger.hide();
     alertSukses.hide();
+}
+
+function showDetail(idJadwal, idLelang, jadwal, batas, keterangan){
+    $('#txtOldIdJadwalEdit').val(idJadwal);
+    $('#txtIdLelangEdit').val(idJadwal);
+    $('#txtIdJadwalEdit').val(idLelang);
+    $('#dateJadwalPraQEdit').val(jadwal);
+    $('#dateBatasUpEdit').val(batas);
+    $('#txtKetJadwalEdit').val(keterangan);
+    $('#modaleditJadwal').modal('show');
 }
