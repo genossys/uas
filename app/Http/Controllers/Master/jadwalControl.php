@@ -24,7 +24,7 @@ class jadwalControl extends Controller
             ->addIndexColumn()
             ->addColumn( 'action', function ($jadwal) {
                 return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $jadwal->idJadwal . '\',\'' . $jadwal->idLelang . '\',\'' . $jadwal->jadwal . '\',\'' . $jadwal->batasUpload . '\',\'' . $jadwal->keterangan . '\')"><i class="fa fa-edit"></i><a/> 
-                        <a class="btn-sm btn-danger" id="btn-delete" href="#" ><i class="fa fa-trash"></i></a>';
+                        <a class="btn-sm btn-danger" id="btn-delete" href="#" onclick="deleteJadwal(\''. $jadwal->idJadwal.'\')" ><i class="fa fa-trash"></i></a>';
                 })
             ->make(true);
 
@@ -116,6 +116,11 @@ class jadwalControl extends Controller
     }
 
     public function delete(Request $r){
-
+        $id = $r->input('idJadwal');
+        jadwalModel::destroy($id);
+        return response()->json([
+            'sukses' => 'Berhasil Di hapus'. $id,
+            'url' => 'kelas/dataKelas'
+        ]);
     }
 }

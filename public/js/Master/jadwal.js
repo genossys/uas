@@ -99,6 +99,33 @@ $('#formEditJadwal').on('submit', function (e) {
 
 });
 
+function deleteJadwal(id) {
+    if (confirm('Apakah Anda Yakin Menghapus Data ' + id)) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: '/jadwal/hapusDataJadwal',
+            data: {
+                _method: 'DELETE',
+                _token: $('input[name=_token]').val(),
+                idJadwal: id
+            },
+            success: function (response) {
+                console.log(response);
+                alert('Data Berhasil Di Hapus');
+                table.draw();
+            }, error: function (xhr, textStatus, errorThrown) {
+                alert(xhr + textStatus + errorThrown);
+            }
+
+        });
+    }
+}
+
 function clearSave(){
     $('#txtIdLelang').val('');
     $('#txtIdJadwal').val('');
