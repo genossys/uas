@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Master;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Master\jadwalModel;
+use App\Master\tahapanModel;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\Validator;
 
-class jadwalControl extends Controller
+class tahapanControl extends Controller
 {
     //
     public function index(){
@@ -16,14 +16,14 @@ class jadwalControl extends Controller
     }
 
     public function getDataTahapan(){
-        $tahapan = jadwalModel::query()
-                ->select('idTahapan','idLelang','batasUpload')
+        $tahapan = tahapanModel::query()
+                ->select('idTahapan','idLelang','batasUpload','pekerjaan')
                 ->orderBy('idTahapan', 'ASC')
                 ->get();
         return Datatables::of($tahapan)
             ->addIndexColumn()
             ->addColumn( 'action', function ($tahapan) {
-                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $tahapan->idTahapan . '\',\'' . $tahapan->idLelang . '\',\'' . $tahapan->batasUpload . '\')"><i class="fa fa-edit"></i><a/>
+                return '<a class="btn-sm btn-warning" id="btn-edit" href="#" onclick="showDetail(\'' . $tahapan->idTahapan . '\',\'' . $tahapan->idLelang . '\',\'' . $tahapan->batasUpload . '\',\'' . $tahapan->pekerjaan . '\')"><i class="fa fa-edit"></i><a/>
                         <a class="btn-sm btn-danger" id="btn-delete" href="#" onclick="deleteTahapan(\''. $tahapan->idTahapan.'\')" ><i class="fa fa-trash"></i></a>';
                 })
             ->make(true);

@@ -7,12 +7,13 @@ var table = $('#example2').DataTable({
     autowidth: true,
     serverSide: true,
     processing: false,
-    ajax: '/jadwal/getDataTahapan',
+    ajax: '/tahapan/getDataTahapan',
     columns: [
         {data: 'DT_RowIndex', name: 'DT_RowIndex', searchable: false, orderable: false, sortable: false},
         {data: 'idTahapan', name: 'idTahapan'},
         {data: 'idLelang', name: 'idLelang'},
         {data: 'batasUpload', name: 'batasUpload'},
+        {data: 'pekerjaan', name: 'pekerjaan'},
         {data: 'action', name: 'action', searchable: false, orderable: false}
     ]
 

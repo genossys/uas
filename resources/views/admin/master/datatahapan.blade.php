@@ -201,5 +201,6 @@ Data tahapan
             });
         });
     </script>
+    <script src="{{ asset('/js/Master/tahapan.js') }}"></script>
 
     @endsection

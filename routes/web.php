@@ -36,7 +36,7 @@ Route::prefix('jadwal')->group(function(){
 });
 
 
-Route::prefix('datatahapan')->group(function(){
+Route::prefix('tahapan')->group(function(){
     Route::get('/', 'Master\tahapanControl@index')->name('dataTahapan');
     Route::get('/getDataTahapan','Master\tahapanControl@getDataTahapan');
     Route::post('/simpanDataJadwal','Master\jadwalControl@insert')->name('simpanJadwal');
