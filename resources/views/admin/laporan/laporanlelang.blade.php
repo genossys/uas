@@ -13,17 +13,26 @@ Laporan Data Lelang
     <div class="container">
         <div class="row">
             <div class="col-sm-5 ">
-        <div class="form-group">
-            <label>Tanggal Lelang:</label>
+                <div class="form-group">
+                    <label>Tanggal Lelang:</label>
 
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    <div class="input-group ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input type="text" class="form-control float-right" id="reservation">
+                        <button class="btn btn-success"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
                 </div>
-                <input type="text" class="form-control float-right" id="reservation">
-                <button class="btn btn-success"><i class="fa fa-search" aria-hidden="true"></i></button>
             </div>
-            </div>
+
+            <div class="col-sm-7 text-right">
+                <div class="form-group">
+                    <label><br></label>
+                    <div class="input-group">
+                        <button class="btn btn-warning ml-auto" style="color: white"><i class="fa fa-print" aria-hidden="true"></i> Cetak</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.input group -->
@@ -66,11 +75,12 @@ Laporan Data Lelang
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 <script src="{{asset ('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <script>
-$(function () {
-    //Date range picker
-    $('#reservation').daterangepicker()
+    $(function() {
+        //Date range picker
+        $('#reservation').daterangepicker()
 
-})
+    })
 </script>
 
+<script src="{{ asset('/js/Laporan/laporanlelang.js') }}"></script>
 @endsection

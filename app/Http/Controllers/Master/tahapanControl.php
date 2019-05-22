@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Validator;
 
 class tahapanControl extends Controller
 {
-    //
     public function index(){
         return view('/admin/master/datatahapan');
     }

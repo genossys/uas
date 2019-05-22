@@ -48,6 +48,11 @@ Route::prefix('lelang')->group(function(){
     Route::get('/getDataLelang', 'Master\lelangControl@getDataLelang');
 });
 
+Route::prefix('laporanlelang')->group(function(){
+    Route::get('/','Master\tahapanControl@index')->name( 'dataLelang');
+    Route::get('/getDataLelang', 'Master\tahapanControl@getDataTahapan');
+
+});
 Route::get('/admin', function () {
     return view('/admin/menuawal');
 })->name('admin');
