@@ -1,3 +1,6 @@
+body{
+
+}
 
 section .pencarianlap{
     padding-top: 30px;
@@ -6,3 +9,18 @@ section .pencarianlap{
 section .btn{
     margin-left: 10px;
 }
+
+
+.kasihbackground{
+    background-repeat: no-repeat;
+    background-image: url(../assets/gambar/bg.png);
+    background-position: center;
+    background-color: rgba(0, 0, 0,0.3);
+    position: absolute;
+    height: 85%;
+    width: 90%;
+    opacity: 0.1;
+    z-index: -20;
+}
+
+

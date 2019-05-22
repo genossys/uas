@@ -10,35 +10,36 @@
     <title>PT.IKS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- Font Awesome -->
-  <link rel="stylesheet" href="{{asset ('adminlte/plugins/font-awesome/css/font-awesome.min.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset ('adminlte/plugins/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/adminlte/css/adminlte.min.css')}}">
-    <!-- Genosstyle -->
-    <link rel="stylesheet" href="{{ asset('/css/genosstyle.css')}}">
+
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href=" {{ asset('/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     @yield('css')
+
+    <!-- Genosstyle -->
+    <link rel="stylesheet" href="{{ asset('/css/genosstyle.css')}}">
 </head>
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav
-        class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                <a class="nav-link">@yield('judul')</a>
+                    <a class="nav-link">@yield('judul')</a>
                 </li>
 
             </ul>
@@ -96,8 +97,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route ('dataLelang')}}"
-                                     class="nav-link {{ set_active('dataLelang')}}">
+                                    <a href="{{route ('dataLelang')}}" class="nav-link {{ set_active('dataLelang')}}">
                                         <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Data Lelang</p>
                                     </a>
@@ -127,8 +127,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route ('laporanLelang')}}"
-                                     class="nav-link {{ set_active('laporanLelang')}}">
+                                    <a href="{{route ('laporanLelang')}}" class="nav-link {{ set_active('laporanLelang')}}">
                                         <i class="fa fa-circle-o nav-icon"></i>
                                         <p>Laporan Data Lelang</p>
                                     </a>
@@ -146,57 +145,58 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- =============================================== -->
 
+
+        <div class="content-wrapper " style="background-color: rgba(0, 0, 0, 0);">
+            <!-- =============================================== -->
+            <div class="kasihbackground">
+
+        </div>
             <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-            @yield('content')
-        </div><!-- /.container-fluid -->
-      </section>
-      <!-- /.content -->
+            <section class="content ">
+                <div class="container-fluid ">
+                    @yield('content')
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2019 Dodik
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.0-alpha
-      </div>
     </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
-      <!-- Control sidebar content goes here -->
+        <!-- Control sidebar content goes here -->
     </aside>
     <!-- /.control-sidebar -->
-  </div>
-  <!-- ./wrapper -->
+    </div>
+    <!-- ./wrapper -->
 
-  <!-- jQuery -->
-  <script src="{{ asset ('/adminlte/plugins/jquery/jquery.min.js')}}"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-  <script>
-    $.widget.bridge('uibutton', $.ui.button)
-  </script>
-  <!-- Bootstrap 4 -->
-  <script src=" {{asset ('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <!-- Bootstrap WYSIHTML5 -->
-  <script src=" {{ asset ('/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
-  <!-- Slimscroll -->
-  <script src="{{asset ('/adminlte/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
-  <!-- FastClick -->
-  <script src=" {{asset ('/adminlte/plugins/fastclick/fastclick.js')}}"></script>
-  <!-- AdminLTE App -->
-  <script src="{{asset ('/adminlte/js/adminlte.js')}}"></script>
-  <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('js/dataTablesBootstrap4.js') }}"></script>
-<script src="{{ asset('js/handlebars.js') }}"></script>
+    <!-- jQuery -->
+    <script src="{{ asset ('/adminlte/plugins/jquery/jquery.min.js')}}"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src=" {{asset ('/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src=" {{ asset ('/adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}"></script>
+    <!-- Slimscroll -->
+    <script src="{{asset ('/adminlte/plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src=" {{asset ('/adminlte/plugins/fastclick/fastclick.js')}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{asset ('/adminlte/js/adminlte.js')}}"></script>
+    <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/dataTablesBootstrap4.js') }}"></script>
+    <script src="{{ asset('js/handlebars.js') }}"></script>
 
-@yield('script')
+    @yield('script')
 </body>
 
 </html>
