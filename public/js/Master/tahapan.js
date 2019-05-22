@@ -19,7 +19,7 @@ var table = $('#example2').DataTable({
 
 });
 
-$('#formSimpanJadwal').on('submit', function (e) {
+$('#formSimpanTahapan').on('submit', function (e) {
     e.preventDefault();
     var method = $(this).attr("method");
     var url = $(this).attr("action");
@@ -33,7 +33,7 @@ $('#formSimpanJadwal').on('submit', function (e) {
         type: method,
         url: url,
         dataType: 'JSON',
-        data: new FormData($('#formSimpanJadwal')[0]),
+        data: new FormData($('#formSimpanTahapan')[0]),
         contentType: false,
         cache: false,
         processData: false,
@@ -41,7 +41,7 @@ $('#formSimpanJadwal').on('submit', function (e) {
             console.log(response);
             if (response.valid) {
                 clearSave();
-                alertSukses.show().html('<p> Berhasil Menambahkan Data ' + response.sukses.idJadwal + '</p>');
+                alertSukses.show().html('<p> Berhasil Menambahkan Data ' + response.sukses.idTahapan + '</p>');
                 table.draw();
             } else {
                 alertDanger.hide();
@@ -59,7 +59,7 @@ $('#formSimpanJadwal').on('submit', function (e) {
 
 });
 
-$('#formEditJadwal').on('submit', function (e) {
+$('#formEditTahapan').on('submit', function (e) {
     e.preventDefault();
     var method = $(this).attr("method");
     var url = $(this).attr("action");
@@ -73,14 +73,14 @@ $('#formEditJadwal').on('submit', function (e) {
         type: method,
         url: url,
         dataType: 'JSON',
-        data: new FormData($('#formEditJadwal')[0]),
+        data: new FormData($('#formEditTahapan')[0]),
         contentType: false,
         cache: false,
         processData: false,
         success: function (response) {
             console.log(response);
             if (response.valid) {
-                $('#modaleditJadwal').modal('hide');
+                $('#modaleditTahapan').modal('hide');
                 table.draw();
             } else {
                 alertDanger.hide();
@@ -98,7 +98,7 @@ $('#formEditJadwal').on('submit', function (e) {
 
 });
 
-function deleteJadwal(id) {
+function deleteTahapan(id) {
     if (confirm('Apakah Anda Yakin Menghapus Data ' + id)) {
         $.ajaxSetup({
             headers: {
@@ -107,11 +107,11 @@ function deleteJadwal(id) {
         });
         $.ajax({
             type: 'POST',
-            url: '/jadwal/hapusDataJadwal',
+            url: '/tahapan/hapusDataTahapan',
             data: {
                 _method: 'DELETE',
                 _token: $('input[name=_token]').val(),
-                idJadwal: id
+                idTahapan: id
             },
             success: function (response) {
                 console.log(response);
@@ -127,20 +127,18 @@ function deleteJadwal(id) {
 
 function clearSave(){
     $('#txtIdLelang').val('');
-    $('#txtIdJadwal').val('');
-    $('#dateJadwalPraQ').val('');
+    $('#txtIdTahapan').val('');
     $('#dateBatasUp').val('');
-    $('#txtKetJadwal').val('');
+    $('#txtPekerjaan').val('');
     alertDanger.hide();
     alertSukses.hide();
 }
 
-function showDetail(idJadwal, idLelang, jadwal, batas, keterangan){
-    $('#txtOldIdJadwalEdit').val(idJadwal);
-    $('#txtIdLelangEdit').val(idJadwal);
-    $('#txtIdJadwalEdit').val(idLelang);
-    $('#dateJadwalPraQEdit').val(jadwal);
+function showDetail(idTahapan, idLelang, batas, pekerjaan){
+    $('#txtOldIdTahapanEdit').val(idTahapan);
+    $('#txtIdLelangEdit').val(idTahapan);
+    $('#txtIdTahapanEdit').val(idLelang);
     $('#dateBatasUpEdit').val(batas);
-    $('#txtKetJadwalEdit').val(keterangan);
-    $('#modaleditJadwal').modal('show');
+    $('#txtPekerjaan').val(pekerjaan);
+    $('#modaleditTahapan').modal('show');
 }

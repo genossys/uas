@@ -38,9 +38,9 @@ class tahapanControl extends Controller
         ];
 
         $rules = [
-            'txtIdJadwal' => 'required|max:10',
+            'txtIdTahapan' => 'required|max:10',
             'txtIdLelang' => 'required|max:10',
-            'dateJadwalPraQ' => 'required',
+            'datePekerjaan' => 'required',
             'dateBatasUp' => 'required',
         ];
 
@@ -55,9 +55,9 @@ class tahapanControl extends Controller
         ];
 
         $rules = [
-            'txtIdJadwalEdit' => 'required|max:10',
+            'txtIdTahapanEdit' => 'required|max:10',
             'txtIdLelangEdit' => 'required|max:10',
-            'dateJadwalPraQEdit' => 'required',
+            'datePekerjaan' => 'required',
             'dateBatasUpEdit' => 'required',
         ];
 
@@ -72,17 +72,16 @@ class tahapanControl extends Controller
                 'errors' => $this-> isValid($r)->errors()->all()
             ]);
         } else {
-            $jadwal = new jadwalModel;
-            $jadwal->idJadwal = $r->txtIdJadwal;
-            $jadwal->idLelang = $r->txtIdLelang;
-            $jadwal->jadwal = $r->dateJadwalPraQ;
-            $jadwal->batasUpload = $r->dateBatasUp;
-            $jadwal->keterangan = $r->txtKetJadwal;
-            $jadwal->save();
+            $tahapan = new tahapanModel();
+            $tahapan->idTahapan = $r->txtIdTahapan;
+            $tahapan->idLelang = $r->txtIdLelang;
+            $tahapan->pekerjaan = $r->txtPekerjaan;
+            $tahapan->batasUpload = $r->dateBatasUp;
+            $tahapan->save();
             return response()
                 ->json([
                     'valid' => true,
-                    'sukses' => $jadwal,
+                    'sukses' => $tahapan,tahapan
                 ]);
         }
     }
@@ -95,32 +94,31 @@ class tahapanControl extends Controller
                 'errors' => $this->isValidUpdate($r)->errors()->all()
             ]);
         } else {
-            $id = $r->txtOldIdJadwalEdit;
+            $id = $r->txtOldIdTahapanEdit;
             $data = [
-                'idJadwal' => $r->txtIdJadwalEdit,
+                'idTahapan' => $r->txtIdTahapanEdit,
                 'idLelang' => $r->txtIdLelangEdit,
-                'jadwal' => $r->dateJadwalPraQEdit,
-                'batasUpload' => $r->dateBatasUpEdit,
-                'keterangan' => $r->txtKetJadwalEdit
+                'pekerjaan' => $r->txtPekerjaan,
+                'batasUpload' => $r->dateBatasUpEdit
             ];
-            jadwalModel::query()
-                ->where('idJadwal', '=', $id)
+            tahapanModel::query()
+                ->where('idTahapan', '=', $id)
                 ->update($data);
             return response()
                 ->json([
                     'valid' => true,
                     'sukses' => $data,
-                    'url' => 'kelas/dataKelas'
+                    'url' => 'tahapan/dataTahapan'
                 ]);
         }
     }
 
     public function delete(Request $r){
-        $id = $r->input('idJadwal');
-        jadwalModel::destroy($id);
+        $id = $r->input('idTahapan');
+        tahapanModel::destroy($id);
         return response()->json([
             'sukses' => 'Berhasil Di hapus'. $id,
-            'url' => 'kelas/dataKelas'
+            'url' => 'tahapan/dataTahapan'
         ]);
     }
 }

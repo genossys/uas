@@ -38,9 +38,10 @@ Route::prefix('jadwal')->group(function(){
 Route::prefix('tahapan')->group(function(){
     Route::get('/', 'Master\tahapanControl@index')->name('dataTahapan');
     Route::get('/getDataTahapan','Master\tahapanControl@getDataTahapan');
-    Route::post('/simpanDataJadwal','Master\jadwalControl@insert')->name('simpanJadwal');
-    Route::post('/editDataJadwal','Master\jadwalControl@update')->name('editJadwal');
-    Route::delete('/hapusDataJadwal','Master\jadwalControl@delete');
+    Route::post('/simpanDataTahapan','Master\tahapanControl@insert')->name('simpanTahapan');
+    Route::post('/editDataTahapan','Master\tahapanControl@update')->name('editTahapan');
+    Route::delete('/hapusDataTahapan','Master\tahapanControl@delete');
+});
 
 Route::prefix('lelang')->group(function(){
     Route::get('/','Master\lelangControl@index')->name( 'dataLelang');
@@ -60,5 +61,7 @@ Route::get('/admin', function () {
 Route::get('/laporanlelang', function () {
     return view('/admin/laporan/laporanlelang');
 })->name('laporanLelang');
+
+
 });
 
