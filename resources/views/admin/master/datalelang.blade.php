@@ -43,7 +43,7 @@ Data Lelang
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <form action="" method="POST" id="formSimpanLelang">
+        <form action="{{ route('simpanLelang') }}" method="POST" id="formSimpanLelang" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="alert alert-danger" style="display:none"></div>
@@ -118,7 +118,7 @@ Data Lelang
                                 <label>File Dok. Kualifikasi</label>
                                 <div class="custom-file">
 
-                                    <input type="file" class="custom-file-input" id="fileTeknis" name="fileTeknis" >
+                                    <input type="file" class="custom-file-input" id="fileKualifikasi" name="fileKualifikasi" >
                                     <label class="custom-file-label" for="customFile">Pilih file</label>
                                 </div>
                             </div>
@@ -234,7 +234,26 @@ Data Lelang
         @endsection
 
         @section('script')
-        <script src="{{ asset('js/Master/lelang.js') }}"></script>
+        
+        
         <script src="{{ asset('js/tampilan/fileinput.js') }}"></script>
+        
+        <script src="{{ asset('js/handlebars.js') }}"></script>
+        <script id="details-template" type="text/x-handlebars-templatel">
+            @verbatim
+                <table class="table table-light">
+                    <tbody>
+                        <tr>
+                            <td>Penawaran</td>
+                            <td>:</td>
+                            <td><a href="fpenawaran/{{'urlTeknis'}}">Download</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            @endverbatim
+        </script>
+        <script src="{{ asset('js/Master/lelang.js') }}"></script>
+        
 
+        
         @endsection

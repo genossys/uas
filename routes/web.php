@@ -38,6 +38,7 @@ Route::prefix('jadwal')->group(function(){
 Route::prefix('lelang')->group(function(){
     Route::get('/','Master\lelangControl@index')->name( 'dataLelang');
     Route::get('/getDataLelang', 'Master\lelangControl@getDataLelang');
+    Route::post('/simpanDataLelang', 'Master\lelangControl@insert')->name('simpanLelang');
 });
 
 Route::get('/admin', function () {

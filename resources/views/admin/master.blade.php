@@ -194,7 +194,6 @@
   <script src="{{asset ('/adminlte/js/adminlte.js')}}"></script>
   <script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('js/dataTablesBootstrap4.js') }}"></script>
-<script src="{{ asset('js/handlebars.js') }}"></script>
 
 @yield('script')
 </body>
