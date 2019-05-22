@@ -35,12 +35,25 @@ Route::prefix('jadwal')->group(function(){
 
 });
 
+Route::prefix('tahapan')->group(function(){
+    Route::get('/', 'Master\tahapanControl@index')->name('dataTahapan');
+    Route::get('/getDataTahapan','Master\tahapanControl@getDataTahapan');
+    Route::post('/simpanDataTahapan','Master\tahapanControl@insert')->name('simpanTahapan');
+    Route::post('/editDataTahapan','Master\tahapanControl@update')->name('editTahapan');
+    Route::delete('/hapusDataTahapan','Master\tahapanControl@delete');
+});
+
 Route::prefix('lelang')->group(function(){
     Route::get('/','Master\lelangControl@index')->name( 'dataLelang');
     Route::get('/getDataLelang', 'Master\lelangControl@getDataLelang');
     Route::post('/simpanDataLelang', 'Master\lelangControl@insert')->name('simpanLelang');
 });
 
+Route::prefix('laporanlelang')->group(function(){
+    Route::get('/','Master\tahapanControl@index')->name( 'dataLelang');
+    Route::get('/getDataLelang', 'Master\tahapanControl@getDataTahapan');
+
+});
 Route::get('/admin', function () {
     return view('/admin/menuawal');
 })->name('admin');
@@ -50,12 +63,11 @@ Route::get('/admin', function () {
     });
 
 
-Route::get('/datatahapan', function () {
-    return view('/admin/master/datatahapan');
-})->name('dataTahapan');
 
 Route::get('/laporanlelang', function () {
     return view('/admin/laporan/laporanlelang');
 })->name('laporanLelang');
+
+
 });
 

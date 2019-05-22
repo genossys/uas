@@ -103,8 +103,8 @@ Data tahapan
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Form Edit Data tahapan</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <form action="" method="POST" id="formEditTahapan">
                     {{ csrf_field() }}
@@ -134,22 +134,6 @@ Data tahapan
                                 <div class="form-group">
                                     <label>Ket. tahapan</label>
                                     <textarea class="form-control" rows="3" id="txtPswTahapan" name="txtPswTahapan"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>tahapan Pra-Kualifikasi</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text" class="form-control float-right datepicker" name="dateTahapanPraQ" id="dateTahapanPraQ">
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -201,5 +185,6 @@ Data tahapan
             });
         });
     </script>
+    <script src="{{ asset('/js/Master/tahapan.js') }}"></script>
 
     @endsection
