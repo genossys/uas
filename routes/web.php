@@ -47,6 +47,8 @@ Route::prefix('lelang')->group(function(){
     Route::get('/','Master\lelangControl@index')->name( 'dataLelang');
     Route::get('/getDataLelang', 'Master\lelangControl@getDataLelang');
     Route::post('/simpanDataLelang', 'Master\lelangControl@insert')->name('simpanLelang');
+    Route::post('/editDataLelang','Master\lelangControl@update')->name('editLelang');
+    Route::delete('/hapusDataLelang','Master\lelangControl@delete');
 });
 
 Route::prefix('laporanlelang')->group(function(){
