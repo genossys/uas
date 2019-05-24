@@ -99,8 +99,7 @@ Data tahapan
 </div>
 
 <div class="modal fade" id="modaleditTahapan">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-dialog">
+        <div class="modal-dialog  modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Form Edit Data tahapan</h4>
@@ -163,7 +162,6 @@ Data tahapan
                     </div>
                 </form>
             </div>
-        </div>
     </div>
 
     @endsection
