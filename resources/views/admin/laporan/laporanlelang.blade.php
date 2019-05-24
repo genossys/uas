@@ -30,7 +30,7 @@ Laporan Data Lelang
                 <div class="form-group">
                     <label><br></label>
                     <div class="input-group">
-                        <button class="btn btn-warning ml-auto" style="color: white"><i class="fa fa-print" aria-hidden="true"></i> Cetak</button>
+                        <button class="btn btn-warning ml-auto" style="color: white" onclick="cetak()"><i class="fa fa-print" aria-hidden="true"></i> Cetak</button>
                     </div>
                 </div>
             </div>
