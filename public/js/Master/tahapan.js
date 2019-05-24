@@ -135,10 +135,10 @@ function clearSave(){
 }
 
 function showDetail(idTahapan, idLelang, batas, pekerjaan){
-    $('#txtOldIdTahapanEdit').val(idTahapan);
-    $('#txtIdLelangEdit').val(idTahapan);
-    $('#txtIdTahapanEdit').val(idLelang);
+    $('#txtOldIdTahapan').val(idTahapan);
+    $('#txtIdLelangEdit').val(idLelang);
+    $('#txtIdTahapanEdit').val(idTahapan);
     $('#dateBatasUpEdit').val(batas);
-    $('#txtPekerjaan').val(pekerjaan);
+    $('#txtPekerjaanEdit').val(pekerjaan);
     $('#modaleditTahapan').modal('show');
 }

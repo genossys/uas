@@ -40,7 +40,7 @@ Data tahapan
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
-            <form action="" method="POST" id="formSimpanTahapan">
+        <form action="{{route('simpanTahapan')}}" method="POST" id="formSimpanTahapan">
                 {{ csrf_field() }}
                 <div class="modal-body">
                     <div class="alert alert-danger" style="display:none"></div>
@@ -106,23 +106,24 @@ Data tahapan
                     <h4 class="modal-title">Form Edit Data tahapan</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form action="" method="POST" id="formEditTahapan">
+            <form action="{{route('editTahapan')}}" method="POST" id="formEditTahapan">
                     {{ csrf_field() }}
                     <div class="modal-body">
                         <div class="alert alert-danger" style="display:none"></div>
                         <div class="alert alert-success" style="display:none"></div>
                         <div class="row">
                             <div class="col-sm-6">
+                                <<input id="txtOldIdTahapan" type="hidden" name="txtOldIdTahapan">
                                 <div class="form-group">
                                     <label>ID tahapan</label>
-                                    <input type="text" class="form-control" placeholder="ID tahapan" id="txtIdTahapan" name="txtIdTahapan">
+                                    <input type="text" class="form-control" placeholder="ID tahapan" id="txtIdTahapanEdit" name="txtIdTahapanEdit">
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label>ID Lelang</label>
-                                    <input type="text" class="form-control autocomplete" placeholder="ID jadwal" id="txtIdLelang" name="txtIdLelang">
+                                    <input type="text" class="form-control autocomplete" placeholder="ID jadwal" id="txtIdLelangEdit" name="txtIdLelangEdit">
                                 </div>
                             </div>
 
@@ -133,7 +134,7 @@ Data tahapan
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label>Ket. tahapan</label>
-                                    <textarea class="form-control" rows="3" id="txtPswTahapan" name="txtPswTahapan"></textarea>
+                                    <textarea class="form-control" rows="3" id="txtPekerjaanEdit" name="txtPekerjaanEdit"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +149,7 @@ Data tahapan
                                                 <i class="fa fa-calendar"></i>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control float-right datepicker" name="dateBatasUp" id="dateBatasUp">
+                                        <input type="text" class="form-control float-right datepicker" name="dateBatasUpEdit" id="dateBatasUpEdit">
                                     </div>
                                 </div>
                             </div>

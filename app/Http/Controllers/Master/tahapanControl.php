@@ -39,7 +39,7 @@ class tahapanControl extends Controller
         $rules = [
             'txtIdTahapan' => 'required|max:10',
             'txtIdLelang' => 'required|max:10',
-            'datePekerjaan' => 'required',
+            'txtPekerjaan' => 'required',
             'dateBatasUp' => 'required',
         ];
 
@@ -56,7 +56,7 @@ class tahapanControl extends Controller
         $rules = [
             'txtIdTahapanEdit' => 'required|max:10',
             'txtIdLelangEdit' => 'required|max:10',
-            'datePekerjaan' => 'required',
+            'txtPekerjaanEdit' => 'required',
             'dateBatasUpEdit' => 'required',
         ];
 
@@ -80,7 +80,7 @@ class tahapanControl extends Controller
             return response()
                 ->json([
                     'valid' => true,
-                    'sukses' => $tahapan,tahapan
+                    'sukses' => $tahapan
                 ]);
         }
     }
@@ -93,11 +93,11 @@ class tahapanControl extends Controller
                 'errors' => $this->isValidUpdate($r)->errors()->all()
             ]);
         } else {
-            $id = $r->txtOldIdTahapanEdit;
+            $id = $r->txtOldIdTahapan;
             $data = [
                 'idTahapan' => $r->txtIdTahapanEdit,
                 'idLelang' => $r->txtIdLelangEdit,
-                'pekerjaan' => $r->txtPekerjaan,
+                'pekerjaan' => $r->txtPekerjaanEdit,
                 'batasUpload' => $r->dateBatasUpEdit
             ];
             tahapanModel::query()
