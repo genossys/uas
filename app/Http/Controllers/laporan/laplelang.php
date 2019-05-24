@@ -13,7 +13,7 @@ class laplelang extends Controller
 
     public function cetak(){
         $lelang = lelangModel::all();
-        $pdf = PDF::loadview('admin.laporan.lp',['lelang'=>$lelang]);
+        $pdf = PDF::loadview('admin.pdf.lelangpdf',['lelang'=>$lelang]);
         return $pdf->stream('lap');
     }   
 }
