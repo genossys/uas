@@ -36,7 +36,7 @@ Data Lelang
 
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalTambah" aria-hidden="true" id="modaltambahlelang">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalTambah">Tambah Data Lelang</h5>
@@ -128,7 +128,7 @@ Data Lelang
 </div>
 
 <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true" id="modaleditlelang">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalEdit">Modal Edit Siswa</h5>
@@ -210,7 +210,7 @@ Data Lelang
                             </div>
                         </div>
                     </div>
-                
+
             </div>
             <div class="modal-footer">
                 <div class="text-right">
@@ -223,14 +223,14 @@ Data Lelang
 </div>
 
 
-        
+
         @endsection
 
         @section('script')
-        
-        
+
+
         <script src="{{ asset('js/tampilan/fileinput.js') }}"></script>
-        
+
         <script src="{{ asset('js/handlebars.js') }}"></script>
         <script id="details-template" type="text/x-handlebars-templatel">
                 <table class="table table-light">
@@ -238,11 +238,11 @@ Data Lelang
                         <tr>
                             <td>Penawaran</td>
                             <td>:</td>
-                            
+
                             <td><a href="fpenawaran/@{{ 'urlPenawaran' }}">
                                 Download
                         </a></td>
-                            
+
                         </tr>
                         <tr>
                             <td>Teknis</td>
@@ -258,7 +258,7 @@ Data Lelang
                 </table>
         </script>
         <script src="{{ asset('js/Master/lelang.js') }}"></script>
-        
 
-        
+
+
         @endsection

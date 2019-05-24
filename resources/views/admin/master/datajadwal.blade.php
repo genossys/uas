@@ -47,14 +47,14 @@ Data Jadwal
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>ID Jadwal</label>
-                                <input type="text" class="form-control" placeholder="ID jadwal" id="txtIdJadwal" name="txtIdJadwal">
+                                <input type="text" class="form-control" placeholder="ID Jadwal" id="txtIdJadwal" name="txtIdJadwal">
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>ID Lelang</label>
-                                <input type="text" class="form-control autocomplete" placeholder="ID jadwal" id="txtIdLelang" name="txtIdLelang">
+                                <input type="text" class="form-control autocomplete" placeholder="ID Lelang" id="txtIdLelang" name="txtIdLelang">
                             </div>
                         </div>
 
@@ -128,7 +128,7 @@ Data Jadwal
                             <input type="hidden" class="form-control" placeholder="ID jadwal" id="txtOldIdJadwalEdit" name="txtOldIdJadwalEdit">
                             <div class="form-group">
                                 <label>ID Jadwal</label>
-                                <input type="text" class="form-control" placeholder="ID jadwal" id="txtIdJadwalEdit" name="txtIdJadwalEdit">
+                                <input type="text" class="form-control" placeholder="ID Lelang" id="txtIdJadwalEdit" name="txtIdJadwalEdit">
                             </div>
                         </div>
 
