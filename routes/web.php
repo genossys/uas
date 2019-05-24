@@ -71,6 +71,8 @@ Route::get('/laporanlelang', function () {
     return view('/admin/laporan/laporanlelang');
 })->name('laporanLelang');
 
-
+Route::get('/lelangpdf', function () {
+    return view('/admin/pdf/lelangpdf');
+})->name('lelangpdf');
 });
 

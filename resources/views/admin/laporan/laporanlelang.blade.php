@@ -50,17 +50,17 @@ Laporan Data Lelang
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>ID tahapan</th>
                         <th>ID Lelang</th>
-                        <th>Batas Waktu Upload</th>
-                        <th>Pekerjaan</th>
-                        <th>Action</th>
+                        <th>Kode Lelang</th>
+                        <th>Nama Lelang</th>
+                        <th>Password</th>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
 </section>
+
 
 @endsection
 
