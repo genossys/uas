@@ -21,7 +21,7 @@ Laporan Data Lelang
                             <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                         </div>
                         <input type="text" class="form-control float-right" id="reservation">
-                        <button class="btn btn-success"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <button class="btn btn-success" onclick="cari()"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
@@ -50,10 +50,11 @@ Laporan Data Lelang
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>ID Jadwal</th>
                         <th>ID Lelang</th>
-                        <th>Kode Lelang</th>
-                        <th>Nama Lelang</th>
-                        <th>Password</th>
+                        <th>Jadwal</th>
+                        <th>Batas Upload</th>
+                        <th>Keterangan</th>
                     </tr>
                 </thead>
             </table>
@@ -77,9 +78,13 @@ Laporan Data Lelang
 <script>
     $(function() {
         //Date range picker
-        $('#reservation').daterangepicker()
+        $('#reservation').daterangepicker({
+                                
+                format: 'YYYY-MM-DD',
+            }
+        );
 
-    })
+    });
 </script>
 
 <script src="{{ asset('/js/Laporan/laporanlelang.js') }}"></script>

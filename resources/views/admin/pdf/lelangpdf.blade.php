@@ -3,39 +3,38 @@
 
 <head>
     <title>PT.IKS</title>
-    
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <style>
+        body{
+            font-size: 12px;
+        }
+    </style> 
 </head>
 
-<body class="">
+<body>
 
     <section class="header">
         <div class="row">
             <div class="col-sm-3 text-right">
-               
+               <img class="img-fluid" src="fpenawaran/PNW.09.png" alt="">
             </div>
             <div class="col-sm-9">
                 <h1 class="headerpdf"> PT. INVESTAMA KOMANDO SECURITY</h1>
                 <h5 class="header2pdf">Dusun II Makamhaji Kec. Kartasura Kabupaten Sukoharjo, Jawa Tengah 57161</h5>
-
             </div>
 
-        </div>
-        <div class="row">
-            <div class="col-sm-8 offset-sm-2 " style="border-top: 1px solid black;margin-top: 10px">
-            </div>
         </div>
     </section>
 
-    <section>
     <div class="row">
                 <div class="col-sm-10 offset-sm-1 text-right jenislaporan">
                   <p>Laporan Data Lelang</p>
                   <p>Periode: </p>
                 </div>
-    </section>
 
+                    
     
-                        <table id="example2" class="table table-striped  table-bordered table-hover" cellspacing="0" width="100%">
+                        <table class="table table-stripped">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -58,8 +57,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                   
-    </section>
 
 </body>
 
