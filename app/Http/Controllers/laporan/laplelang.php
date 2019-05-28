@@ -12,7 +12,6 @@ class laplelang extends Controller
 {
     //
 
-    private $datas = null;
 
     public function tampil(Request $r){
 
@@ -39,11 +38,12 @@ class laplelang extends Controller
     }
 
     public function cetak(Request $r){
-
-        if ($r->awal != null && $r->akhir != null) {
+        $start = $r->input('awal');
+        $end = $r->input('akhir');
+        $periode = $start.' - '. $end;
+        if ($start != null && $end != null) {
             # code...
-            $start = $r->input('awal');
-            $end = $r->input('akhir');
+            
             $data = jadwalModel::query()
                 ->join('tb_lelang', 'tb_jadwal.idLelang', '=', 'tb_lelang.idLelang')
                 ->select('tb_jadwal.idJadwal', 'tb_jadwal.idLelang', 'tb_jadwal.jadwal', 'tb_jadwal.batasUpload', 'tb_jadwal.keterangan', 'tb_lelang.kdLelang', 'tb_lelang.namaLelang')
@@ -59,9 +59,9 @@ class laplelang extends Controller
 
         // $view = View('admin.pdf.lelangpdf', ['lelang' => $data]);
         // $pdf =\App::make('dompdf.wrapper');
-        $pdf = PDF::loadview('admin.pdf.lelangpdf',  ['lelang' => $data]);
+        $pdf = PDF::loadview('admin.pdf.lelangpdf',  ['lelang' => $data, 'periode' => $periode]);
         $pdf->setPaper('A4');
-        return $pdf->stream();
+        return $pdf->stream('laporan.pdf');
     }   
 
     public function cetak2(){

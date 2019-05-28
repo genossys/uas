@@ -8,10 +8,34 @@
         body{
             font-size: 12px;
         }
+        header {
+                position: fixed;
+                top: 0cm;
+                left: 0cm;
+                right: 0cm;
+                height: 3cm;
+            }
+
+            /** Define the footer rules **/
+            footer {
+                position: fixed; 
+                bottom: 0cm; 
+                left: 0cm; 
+                right: 0cm;
+                height: 2cm;
+            }
     </style> 
 </head>
 
 <body>
+
+    <header>
+        Test Header
+    </header>
+
+    <footer>
+        Test Footer
+    </footer>
 
     <section class="header">
         <div class="row">
@@ -25,12 +49,33 @@
 
         </div>
     </section>
-
+<p>Periode: {{$periode}}</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
     <div class="row">
+        
                 <div class="col-sm-10 offset-sm-1 text-right jenislaporan">
                   <p>Laporan Data Lelang</p>
-                  <p>Periode: </p>
+                
                 </div>
+               
 
                     
     
