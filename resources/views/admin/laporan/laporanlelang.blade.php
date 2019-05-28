@@ -55,6 +55,8 @@ Laporan Data Lelang
                         <th>Jadwal</th>
                         <th>Batas Upload</th>
                         <th>Keterangan</th>
+                        <th>Kode Lelang</th>
+                        <th>Nama Lelang</th>
                     </tr>
                 </thead>
             </table>

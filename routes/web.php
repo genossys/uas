@@ -54,8 +54,9 @@ Route::prefix('lelang')->group(function(){
 Route::prefix('laporanlelang')->group(function(){
     Route::get('/','Master\tahapanControl@index')->name( 'dataLelang');
     Route::get('/getDataLelang', 'Master\tahapanControl@getDataTahapan');
-    Route::get('/laporan','laporan\laplelang@cetak');
     Route::get('/getData','laporan\laplelang@tampil');
+    Route::get('/laporan','laporan\laplelang@cetak');
+    Route::get('/cetak','laporan\laplelang@cetak2')->name('ctk');
 
 });
 Route::get('/admin', function () {

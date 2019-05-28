@@ -5,13 +5,14 @@ namespace App\Http\Controllers\laporan;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use PDF;
-use App\Master\lelangModel;
 use App\Master\jadwalModel;
 use Yajra\DataTables\DataTables;
 
 class laplelang extends Controller
 {
     //
+
+    private $datas = null;
 
     public function tampil(Request $r){
 
@@ -20,12 +21,14 @@ class laplelang extends Controller
             $start = $r->input('awal');
             $end = $r->input('akhir');
             $data = jadwalModel::query()
-                ->select('idJadwal', 'idLelang', 'jadwal', 'batasUpload', 'keterangan')
+                ->join('tb_lelang', 'tb_jadwal.idLelang', '=', 'tb_lelang.idLelang')
+                ->select('tb_jadwal.idJadwal', 'tb_jadwal.idLelang', 'tb_jadwal.jadwal', 'tb_jadwal.batasUpload', 'tb_jadwal.keterangan', 'tb_lelang.kdLelang', 'tb_lelang.namaLelang')
                 ->whereBetween('jadwal', array($start, $end))
                 ->get();
         }else{
             $data = jadwalModel::query()
-                ->select('idJadwal', 'idLelang', 'jadwal', 'batasUpload', 'keterangan')
+                ->join('tb_lelang', 'tb_jadwal.idLelang','=','tb_lelang.idLelang')
+                ->select('tb_jadwal.idJadwal', 'tb_jadwal.idLelang', 'tb_jadwal.jadwal', 'tb_jadwal.batasUpload', 'tb_jadwal.keterangan', 'tb_lelang.kdLelang', 'tb_lelang.namaLelang')
                 ->get();
         }
        
@@ -35,10 +38,36 @@ class laplelang extends Controller
             ->make(true);
     }
 
-    public function cetak(){
-        $lelang = lelangModel::all();
-        $pdf = PDF::loadview('admin.pdf.lelangpdf',['lelang'=>$lelang]);
-        $pdf->setPaper('A3');
-        return $pdf->stream('lap');
+    public function cetak(Request $r){
+
+        if ($r->awal != null && $r->akhir != null) {
+            # code...
+            $start = $r->input('awal');
+            $end = $r->input('akhir');
+            $data = jadwalModel::query()
+                ->join('tb_lelang', 'tb_jadwal.idLelang', '=', 'tb_lelang.idLelang')
+                ->select('tb_jadwal.idJadwal', 'tb_jadwal.idLelang', 'tb_jadwal.jadwal', 'tb_jadwal.batasUpload', 'tb_jadwal.keterangan', 'tb_lelang.kdLelang', 'tb_lelang.namaLelang')
+                ->whereBetween('jadwal', array($start, $end))
+                ->get();
+        } else {
+            $data = jadwalModel::query()
+                ->join('tb_lelang', 'tb_jadwal.idLelang', '=', 'tb_lelang.idLelang')
+                ->select('tb_jadwal.idJadwal', 'tb_jadwal.idLelang', 'tb_jadwal.jadwal', 'tb_jadwal.batasUpload', 'tb_jadwal.keterangan', 'tb_lelang.kdLelang', 'tb_lelang.namaLelang')
+                ->get();
+        }
+
+
+        // $view = View('admin.pdf.lelangpdf', ['lelang' => $data]);
+        // $pdf =\App::make('dompdf.wrapper');
+        $pdf = PDF::loadview('admin.pdf.lelangpdf',  ['lelang' => $data]);
+        $pdf->setPaper('A4');
+        return $pdf->stream();
     }   
+
+    public function cetak2(){
+        // $pdf = PDF::loadview('admin.pdf.lelangpdf',  ['lelang' => $data]);
+        // $pdf->setPaper('A3');
+        // return $pdf->stream('lap');
+        // return response()->json($datapdf);
+    }
 }

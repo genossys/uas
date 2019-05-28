@@ -502,6 +502,7 @@ class ComposerStaticInitf2552df2653c3475dcc82682e4e75ad2
         'App\\Http\\Controllers\\Master\\jadwalControl' => __DIR__ . '/../..' . '/app/Http/Controllers/Master/jadwalControl.php',
         'App\\Http\\Controllers\\Master\\lelangControl' => __DIR__ . '/../..' . '/app/Http/Controllers/Master/lelangControl.php',
         'App\\Http\\Controllers\\Master\\tahapanControl' => __DIR__ . '/../..' . '/app/Http/Controllers/Master/tahapanControl.php',
+        'App\\Http\\Controllers\\laporan\\laplelang' => __DIR__ . '/../..' . '/app/Http/Controllers/laporan/laplelang.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

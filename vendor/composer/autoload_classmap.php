@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\Master\\jadwalControl' => $baseDir . '/app/Http/Controllers/Master/jadwalControl.php',
     'App\\Http\\Controllers\\Master\\lelangControl' => $baseDir . '/app/Http/Controllers/Master/lelangControl.php',
     'App\\Http\\Controllers\\Master\\tahapanControl' => $baseDir . '/app/Http/Controllers/Master/tahapanControl.php',
+    'App\\Http\\Controllers\\laporan\\laplelang' => $baseDir . '/app/Http/Controllers/laporan/laplelang.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
