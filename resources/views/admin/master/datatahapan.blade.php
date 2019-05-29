@@ -9,7 +9,7 @@ Data tahapan
 
 <!-- Button to Open the Modal -->
 <div>
-    <button style="margin-bottom: 10px; margin-top: 20px" type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahTahapan">
+    <button onclick="clearSave()" margin-bottom: 10px; margin-top: 20px" type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahTahapan">
         Tambah Data tahapan
     </button>
 

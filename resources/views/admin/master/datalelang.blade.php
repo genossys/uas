@@ -12,7 +12,7 @@ Data Lelang
 
 <!-- Button to Open the Modal -->
 <div>
-    <button style="margin-bottom: 10px; margin-top: 20px"  type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahlelang">
+    <button onclick="clearSave()" style="margin-bottom: 10px; margin-top: 20px"  type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahlelang">
         Tambah Data Lelang
     </button>
 

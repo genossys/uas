@@ -9,7 +9,7 @@ Data Jadwal
 
 <!-- Button to Open the Modal -->
 
-<button style="margin-bottom: 10px; margin-top: 20px" type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahJadwal">
+<button onclick="clearSave()" style="margin-bottom: 10px; margin-top: 20px" type="button" class="btn btn-primary box-tools pull-right" data-toggle="modal" data-target="#modaltambahJadwal">
     Tambah Data Jadwal
 </button>
 

@@ -135,6 +135,15 @@ function clearSave(){
     alertDanger.hide();
     alertSukses.hide();
 }
+function clearEdit(){
+    $('#txtIdLelangEdit').val('');
+    $('#txtIdJadwalEdit').val('');
+    $('#dateJadwalPraQEdit').val('');
+    $('#dateBatasUpEdit').val('');
+    $('#txtKetJadwalEdit').val('');
+    alertDanger.hide();
+    alertSukses.hide();
+}
 
 function showDetail(idJadwal, idLelang, jadwal, batas, keterangan){
     $('#txtOldIdJadwalEdit').val(idJadwal);
@@ -145,3 +154,4 @@ function showDetail(idJadwal, idLelang, jadwal, batas, keterangan){
     $('#txtKetJadwalEdit').val(keterangan);
     $('#modaleditJadwal').modal('show');
 }
+
