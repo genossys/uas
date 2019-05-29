@@ -239,7 +239,7 @@ Data Lelang
                             <td>Penawaran</td>
                             <td>:</td>
 
-                            <td><a href="fpenawaran/@{{ 'urlPenawaran' }}">
+                            <td><a href="fpenawaran/@{{ 'urlPenawaran' }}" target="_blank">
                                 Download
                         </a></td>
 
@@ -247,12 +247,12 @@ Data Lelang
                         <tr>
                             <td>Teknis</td>
                             <td>:</td>
-                            <td><a href="fteknis/@{{ 'urlTeknis' }}">Download</a></td>
+                            <td><a href="fteknis/@{{ 'urlTeknis' }}" target="_blank">Download</a></td>
                         </tr>
                         <tr>
                             <td>Kualifikasi</td>
                             <td>:</td>
-                            <td><a href="fkualifikasi/@{{ 'urlKualifikasi' }}">Download</a></td>
+                            <td><a href="fkualifikasi/@{{ 'urlKualifikasi' }}" target="_blank">Download</a></td>
                         </tr>
                     </tbody>
                 </table>
