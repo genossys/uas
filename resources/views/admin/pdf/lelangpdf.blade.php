@@ -5,42 +5,41 @@
     <title>PT.IKS</title>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
     <style>
-        body{
+        body {
             font-size: 12px;
         }
-        header {
-                position: fixed;
-                top: 0cm;
-                left: 0cm;
-                right: 0cm;
-                height: 3cm;
-            }
 
-            /** Define the footer rules **/
-            footer {
-                position: fixed; 
-                bottom: 0cm; 
-                left: 0cm; 
-                right: 0cm;
-                height: 2cm;
-            }
-    </style> 
+        header {
+            position: fixed;
+            top: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 3cm;
+        }
+
+        /** Define the footer rules **/
+        footer {
+            position: fixed;
+            bottom: 0cm;
+            left: 0cm;
+            right: 0cm;
+            height: 2cm;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        Test Header
     </header>
 
     <footer>
-        Test Footer
     </footer>
 
     <section class="header">
         <div class="row">
             <div class="col-sm-3 text-right">
-               {{-- <img class="img-fluid" src="fpenawaran/PNW.09.png" alt=""> --}}
+                {{-- <img class="img-fluid" src="fpenawaran/PNW.09.png" alt=""> --}}
             </div>
             <div class="col-sm-9">
                 <h1 class="headerpdf"> PT. INVESTAMA KOMANDO SECURITY</h1>
@@ -49,65 +48,45 @@
 
         </div>
     </section>
-<p>Periode: {{$periode}}</p>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    <p>Periode: {{$periode}}</p>
+    <br>
     <div class="row">
-        
-                <div class="col-sm-10 offset-sm-1 text-right jenislaporan">
-                  <p>Laporan Data Lelang</p>
-                
-                </div>
-               
 
-                    
-    
-                        <table class="table table-stripped">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>ID Jadwal</th>
-                                    <th>ID Lelang</th>
-                                    <th>Jadwal</th>
-                                    <th>Batas Upload</th>
-                                    <th>Keterangan</th>
-                                    <th>Kode Lelang</th>
-                                    <th>Nama Lelang</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php $i=1 @endphp
-                                @foreach($lelang as $p)
-                                <tr>
-                                    <td>{{ $i++ }}</td>
-                                    <td>{{$p->idJadwal}}</td>
-                                    <td>{{$p->idLelang}}</td>
-                                    <td>{{$p->jadwal}}</td>
-                                    <td>{{$p->batasUpload}}</td>
-                                    <td>{{$p->keterangan}}</td>
-                                    <td>{{$p->kdLelang}}</td>
-                                    <td>{{$p->namaLelang}}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+        <div class="col-sm-10 offset-sm-1 text-right jenislaporan">
+            <p>Laporan Data Lelang</p>
+
+        </div>
+    </div>
+
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ID Jadwal</th>
+                <th>ID Lelang</th>
+                <th>Jadwal</th>
+                <th>Batas Upload</th>
+                <th>Keterangan</th>
+                <th>Kode Lelang</th>
+                <th>Nama Lelang</th>
+            </tr>
+        </thead>
+        <tbody>
+            @php $i=1 @endphp
+            @foreach($lelang as $p)
+            <tr>
+                <td>{{ $i++ }}</td>
+                <td>{{$p->idJadwal}}</td>
+                <td>{{$p->idLelang}}</td>
+                <td>{{$p->jadwal}}</td>
+                <td>{{$p->batasUpload}}</td>
+                <td>{{$p->keterangan}}</td>
+                <td>{{$p->kdLelang}}</td>
+                <td>{{$p->namaLelang}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 </body>
 

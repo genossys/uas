@@ -6,6 +6,7 @@ var table = $('#example2').DataTable({
     autowidth: true,
     serverSide: true,
     processing: false,
+    searching: false,
     ajax: {
         url:'/laporanlelang/getData',
         data: function (d) {
@@ -17,7 +18,7 @@ var table = $('#example2').DataTable({
             }
             d.awal = tgl1,
             d.akhir = tgl2
-        } 
+        }
     },
     columns: [
         {data: 'DT_RowIndex', name: 'DT_RowIndex', searchable: false, orderable: false, sortable: false},
@@ -46,7 +47,7 @@ function cetak() {
             tgl1 = temp[0];
             tgl2 = temp[1];
         }
-    
+
     $.ajax({
         type: 'GET',
         url: '/laporanlelang/laporan',
@@ -69,8 +70,8 @@ function cetak() {
             setTimeout(function () {
                 document.body.removeChild(link);
                 window.URL.revokeObjectURL(url);
-            }, 100);  
-            
+            }, 100);
+
         },
         error: function (xhr, textStatus, errorThrown) {
             alert(xhr + textStatus + errorThrown);
